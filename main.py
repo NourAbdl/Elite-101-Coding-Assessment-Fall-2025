@@ -91,45 +91,45 @@ def show_menu():
     print("6. List overdue books")
     print("7. Quit")
     print("------------------------------")
-    def run_library(books):
-    while True:
-        show_menu()
-        choice = input("Choose an option: ")
+def run_library(books):
+while True:
+    show_menu()
+    choice = input("Choose an option: ")
 
-        if choice == "1":
-            view_available_books(books)
+    if choice == "1":
+        view_available_books(books)
 
-        elif choice == "2":
-            name = input("Enter author name: ")
-            results = search_books(books, author=name)
-            print("\nSearch Results:")
-            for book in results:
-                print(f"{book['id']} - {book['title']}")
+    elif choice == "2":
+        name = input("Enter author name: ")
+        results = search_books(books, author=name)
+        print("\nSearch Results:")
+        for book in results:
+            print(f"{book['id']} - {book['title']}")
 
-        elif choice == "3":
-            g = input("Enter genre: ")
-            results = search_books(books, genre=g)
-            print("\nSearch Results:")
-            for book in results:
-                print(f"{book['id']} - {book['title']}")
+    elif choice == "3":
+        g = input("Enter genre: ")
+        results = search_books(books, genre=g)
+        print("\nSearch Results:")
+        for book in results:
+            print(f"{book['id']} - {book['title']}")
 
-        elif choice == "4":
-            book_id = input("Enter book ID to checkout: ")
-            checkout_book(books, book_id)
+    elif choice == "4":
+        book_id = input("Enter book ID to checkout: ")
+        checkout_book(books, book_id)
 
-        elif choice == "5":
-            book_id = input("Enter book ID to return: ")
-            return_book(books, book_id)
+    elif choice == "5":
+        book_id = input("Enter book ID to return: ")
+        return_book(books, book_id)
 
-        elif choice == "6":
-            list_overdue_books(books)
+    elif choice == "6":
+        list_overdue_books(books)
 
-        elif choice == "7":
-            print("Goodbye!")
-            break
+    elif choice == "7":
+        print("Goodbye!")
+        break
 
-        else:
-            print("Invalid choice, please try again.")
+    else:
+        print("Invalid choice, please try again.")
 
 # -------- Optional Advanced Features --------
 # You can implement these to move into Tier 4:
